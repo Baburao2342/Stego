@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography Challenge (Fixed)</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Inter', sans-serif; }</style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen p-6 md:p-10">
+    <div class="max-w-7xl mx-auto">
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-600">Steganography Challenge</h1>
+            <p class="text-lg text-gray-400 mt-2">Time to put your detective skills to the test! 🕵️‍♀️</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- (Questions markup same as original) -->
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-6 flex flex-col justify-between transform hover:scale-[1.02] transition-transform duration-300">
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-2">1. Diwali ✨</h2>
+                    <p class="text-gray-300 mb-4">"What song is it?"</p>
+                    <a href="DiwaliHidden.png" download="DiwaliHidden.png" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition duration-300 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Download DiwaliHidden.png</span>
+                    </a>
+                </div>
+                <div class="mt-6">
+                    <input type="text" id="answer1" placeholder="Your Answer..." class="w-full bg-gray-700 border-2 border-gray-600 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                    <button onclick="checkAnswer(1)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold py-2 px-4 rounded-lg mt-3 transition duration-300 shadow-md">Check Answer</button>
+                    <p id="feedback1" class="text-sm mt-2 h-5 font-medium"></p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-6 flex flex-col justify-between transform hover:scale-[1.02] transition-transform duration-300">
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-2">2. Cute Girl 👧</h2>
+                    <p class="text-gray-300 mb-4">"What type of Theiren is she?"</p>
+                    <a href="jufufu.jpeg" download="jufufu.jpeg" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition duration-300 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Download jufufu.jpeg</span>
+                    </a>
+                </div>
+                <div class="mt-6">
+                    <input type="text" id="answer2" placeholder="Your Answer..." class="w-full bg-gray-700 border-2 border-gray-600 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                    <button onclick="checkAnswer(2)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold py-2 px-4 rounded-lg mt-3 transition duration-300 shadow-md">Check Answer</button>
+                    <p id="feedback2" class="text-sm mt-2 h-5 font-medium"></p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-6 flex flex-col justify-between transform hover:scale-[1.02] transition-transform duration-300">
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-2">3. Home 🏡</h2>
+                    <p class="text-gray-300 mb-4">"What's the name of the location?"</p>
+                    <a href="tf_nila_cant_take_photos.jpg" download="tf_nila_cant_take_photos.jpg" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition duration-300 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Download tf_nila_cant_take_photos.jpg</span>
+                    </a>
+                </div>
+                <div class="mt-6">
+                    <input type="text" id="answer3" placeholder="Your Answer..." class="w-full bg-gray-700 border-2 border-gray-600 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                    <button onclick="checkAnswer(3)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold py-2 px-4 rounded-lg mt-3 transition duration-300 shadow-md">Check Answer</button>
+                    <p id="feedback3" class="text-sm mt-2 h-5 font-medium"></p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-6 flex flex-col justify-between transform hover:scale-[1.02] transition-transform duration-300">
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-2">4. Ashish 🎥</h2>
+                    <p class="text-gray-300 mb-4">"who is that man?"</p>
+                    <a href="ashish_hidden.mp4" download="ashish_hidden.mp4" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition duration-300 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Download ashish_hidden.mp4</span>
+                    </a>
+                </div>
+                <div class="mt-6">
+                    <input type="text" id="answer4" placeholder="Your Answer..." class="w-full bg-gray-700 border-2 border-gray-600 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                    <button onclick="checkAnswer(4)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold py-2 px-4 rounded-lg mt-3 transition duration-300 shadow-md">Check Answer</button>
+                    <p id="feedback4" class="text-sm mt-2 h-5 font-medium"></p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-6 flex flex-col justify-between transform hover:scale-[1.02] transition-transform duration-300">
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-2">5. Rishav 🎵</h2>
+                    <p class="text-gray-300 mb-4">"What's the name of this song?"</p>
+                    <a href="Rishav_BeCarefulsteg.jpg" download="Rishav_BeCarefulsteg.jpg" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition duration-300 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Download Rishav_BeCarefulsteg.jpg</span>
+                    </a>
+                </div>
+                <div class="mt-6">
+                    <input type="text" id="answer5" placeholder="Your Answer..." class="w-full bg-gray-700 border-2 border-gray-600 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                    <button onclick="checkAnswer(5)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold py-2 px-4 rounded-lg mt-3 transition duration-300 shadow-md">Check Answer</button>
+                    <p id="feedback5" class="text-sm mt-2 h-5 font-medium"></p>
+                </div>
+            </div>
+
+            <div class="bg-gray-800 rounded-xl shadow-2xl p-6 flex flex-col justify-between transform hover:scale-[1.02] transition-transform duration-300">
+                <div>
+                    <h2 class="text-2xl font-bold text-cyan-400 mb-2">6. Abe Teri! 🔊</h2>
+                    <p class="text-gray-300 mb-4">"What's the full name of this man? (Case insensitive)"</p>
+                    <a href="abeteri_looped.wav" download="abeteri_looped.wav" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg inline-flex items-center transition duration-300 shadow-lg">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>Download abeteri_looped.wav</span>
+                    </a>
+                </div>
+                <div class="mt-6">
+                    <input type="text" id="answer6" placeholder="Your Answer..." class="w-full bg-gray-700 border-2 border-gray-600 text-white rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cyan-400 transition">
+                    <button onclick="checkAnswer(6)" class="w-full bg-cyan-500 hover:bg-cyan-600 text-gray-900 font-bold py-2 px-4 rounded-lg mt-3 transition duration-300 shadow-md">Check Answer</button>
+                    <p id="feedback6" class="text-sm mt-2 h-5 font-medium"></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+    // We store SHA-256 hashes (of the LOWERCASED, trimmed answers) here so the correct answers are not visible in plaintext.
+    // This is client-side-only: it's suitable for a low-stakes quiz. For real security, validate on a server.
+    const correctHashes = {
+      1: "52a747c4e6134d83cd3df16382ded2f254d52fa447caa406f2077fdabe694d14",
+      2: "f15c16b99f82d8201767d3a841ff40849c8a1b812ffbfd2e393d2b6aa6682a6e",
+      3: "58285408f883b4ee52ac6dc65bbaff467a5d302288f5e49ab5036679a9c1b55f",
+      4: "ebf1cce064da7d55332ebc443a3598172344057d32977862aac173131f366dfe",
+      5: "34e2ad7b31cd9ee87c038c10fd6fbe310314ba67abb73a686f0d1087267d7a1d",
+      6: "d76d8089af6855eaaddb5944288d50ea864755d179e07f946bccd360291b1b34"
+    };
+
+    function buf2hex(buffer) {
+      return Array.from(new Uint8Array(buffer)).map(b => b.toString(16).padStart(2,'0')).join('');
+    }
+
+    async function sha256Hex(str) {
+      const encoder = new TextEncoder();
+      const data = encoder.encode(str);
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      return buf2hex(hashBuffer);
+    }
+
+    // Case-insensitive: we lowercase the user's answer and trim
+    async function checkAnswer(questionNumber) {
+      const input = document.getElementById('answer' + questionNumber);
+      const feedback = document.getElementById('feedback' + questionNumber);
+      const raw = (input.value || '').trim();
+      if (raw === '') {
+        feedback.textContent = 'Please enter an answer.';
+        feedback.className = 'text-sm mt-2 h-5 font-medium text-yellow-400';
+        return;
+      }
+
+      const normalized = raw.toLowerCase();
+      const userHash = await sha256Hex(normalized);
+      const expected = correctHashes[questionNumber];
+
+      if (userHash === expected) {
+        feedback.textContent = 'Correct! 🎉';
+        feedback.className = 'text-sm mt-2 h-5 font-medium text-green-400';
+        input.disabled = true;
+        input.classList.remove('border-red-500','border-gray-600');
+        input.classList.add('border-green-500');
+      } else {
+        feedback.textContent = 'Incorrect. Try again.';
+        feedback.className = 'text-sm mt-2 h-5 font-medium text-red-400';
+        input.classList.remove('border-green-500','border-gray-600');
+        input.classList.add('border-red-500');
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      for (let i=1;i<=6;i++){
+        const input = document.getElementById('answer'+i);
+        const feedback = document.getElementById('feedback'+i);
+        if (input) input.addEventListener('focus', ()=>{
+          if (!input.disabled) { feedback.textContent=''; feedback.className='text-sm mt-2 h-5 font-medium'; input.classList.remove('border-red-500'); input.classList.add('border-gray-600'); }
+        });
+      }
+    });
+    </script>
+</body>
+</html>
